@@ -8,8 +8,27 @@ import { AuthService } from 'src/app/auth.service';
   styleUrls: ['./present.component.css'],
 })
 export class PresentComponent implements OnInit {
-  successmsg: any = '';
-  errormsg: any = "";
+  constructor(private authService: AuthService) {}
+
+  // MES PROJETS
+  projets = [
+    {
+      id: 1,
+      pict: '/assets/pict/projets/healGamerLogo.png',
+    },
+    {
+      id: 2,
+      pict: '/assets/pict/projets/backWorldLogo.png',
+    },
+    {
+      id: 3,
+      pict: '/assets/pict/projets/animusLogo.png',
+    },
+  ];
+
+  // CONTACT
+  successmsg: any = 'Message envoyé avec succès';
+  errormsg: any = "Echec de l'envoie du message";
 
   answer = new FormGroup({
     adress: new FormControl('', Validators.required),
@@ -17,17 +36,15 @@ export class PresentComponent implements OnInit {
     message: new FormControl('', Validators.required),
   });
 
-  constructor(private authService: AuthService) {}
-
   contact() {
     this.authService.sendMessage(this.answer.value).subscribe(
       (res) => {
-        this.successmsg = true;
-        this.errormsg = false;
+        alert(this.successmsg);
       },
       (error) => {
         this.successmsg = false;
         this.errormsg = true;
+        alert(this.errormsg);
       }
     );
   }

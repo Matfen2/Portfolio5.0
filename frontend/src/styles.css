@@ -42,27 +42,10 @@ body {
   margin-left: 10px;
   border-radius: 50%;
   color: azure;
+  letter-spacing: 2px;
   font-family: fastHand;
   border: 1px solid black;
   background-color: black;
-}
-#me .container-fluid .navbar #btnBars {
-  display: none;
-  font-size: 1.6em;
-  border: transparent;
-  background: transparent;
-}
-#me .container-fluid .navbar .navbar-nav .nav-link {
-  font-size: 1.6em;
-  font-weight: bold;
-  margin-left: 20px;
-  margin-right: 30px;
-  color: azure;
-  letter-spacing: 6px;
-  font-family: linkStart;
-}
-#me .container-fluid .navbar .navbar-nav .nav-link:hover {
-  color: darkred;
 }
 #me .container-fluid .myProfil {
   left: 0%;
@@ -81,8 +64,13 @@ body {
   letter-spacing: 6px;
   border-radius: 40px;
   font-family: emizen;
+  cursor: pointer;
   background-color: #171a21;
   border: 1px solid black;
+}
+#me .container-fluid .myProfil .myName:hover {
+  color: black;
+  background-color: rgb(165, 8, 165);
 }
 
 .aboutMe {
@@ -131,36 +119,50 @@ body {
   text-shadow: 0px 1px 5px black;
 }
 .Capacity #myListCapacities {
+  -moz-column-gap: 120px;
+       column-gap: 120px;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
 }
 .Capacity #myListCapacities .frontend {
   justify-content: center;
-  -moz-column-gap: 120px;
-       column-gap: 120px;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
   display: flex;
   flex-direction: row;
+  list-style-type: none;
 }
 .Capacity #myListCapacities .frontend .framework {
   font-size: 1.6em;
+  letter-spacing: 2px;
   color: azure;
   font-family: RoundControl;
   text-shadow: 0px 1px 5px black;
 }
+.Capacity #myListCapacities .backend {
+  justify-content: center;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
 .Capacity #myListCapacities .backend .framework {
   font-size: 1.6em;
+  letter-spacing: 2px;
   color: azure;
-  font-family: olney;
+  font-family: RoundControl;
   text-shadow: 0px 1px 5px black;
 }
-.Capacity #myListCapacities #myCVMF .myCV .img-fluid {
+.Capacity #myCVMF .myCV .img-fluid {
   width: 100%;
   margin-top: 40px;
   max-width: 550px;
   border: 1px solid black;
 }
-.Capacity #myListCapacities #myCVMF .myCV #btnDownload {
+.Capacity #myCVMF .myCV #btnDownload {
   padding: 5px;
   margin: auto;
   display: block;
@@ -227,6 +229,7 @@ body {
   text-align: center;
   font-family: emizen;
   letter-spacing: 4px;
+  text-shadow: 0px 1px 5px black;
 }
 #contact .contactModal {
   padding-right: 18px;
@@ -292,52 +295,129 @@ body {
   background-color: darkred;
 }
 
-#sideCanvas {
-  height: 220px;
-  width: 100%;
-  max-width: 280px;
-  background-color: black;
-  border-radius: 0px 0px 0px 40px;
+.showProjet {
+  height: 100vh;
+  padding-top: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/pict/modalBackground.jpeg");
 }
-#sideCanvas .offcanvas-body #btnCloseCanvas {
+.showProjet #btnCloseProjet {
   position: relative;
-  top: -10px;
-  left: 87%;
+  top: 0%;
+  left: 99%;
+  margin-bottom: -85px;
+  transform: translate(-50%, -50%);
   color: azure;
-  font-size: 1.8em;
-  border: transparent;
+  font-size: 1.7em;
   background: transparent;
+  border: transparent;
 }
-#sideCanvas .offcanvas-body .containNav {
-  margin: -15px auto;
+.showProjet .containProjet {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  position: relative;
   text-align: center;
 }
-#sideCanvas .offcanvas-body .containNav .navbar-nav {
-  line-height: 25px;
-}
-#sideCanvas .offcanvas-body .containNav .navbar-nav .nav-item a {
+.showProjet .containProjet .nameProjet {
   color: azure;
-  font-size: 1.6em;
+  font-size: 2.4em;
+  text-align: center;
   font-family: linkStart;
 }
-#sideCanvas .offcanvas-body .containNav .navbar-nav .nav-item a:hover {
-  color: darkred;
+.showProjet .containProjet .img-fluid {
+  margin: 15px auto;
+  height: 650px;
+  max-width: 1150px;
+}
+.showProjet .containProjet .listFrameworks {
+  margin: 7px auto;
+}
+.showProjet .containProjet .listFrameworks #btnFirstLangage {
+  font-size: 1.5em;
+  font-family: RoundControl;
+  color: azure;
+  background: rgb(180, 2, 2);
+  border: 1px solid rgb(180, 2, 2);
+}
+.showProjet .containProjet .listFrameworks #btnSecondLangage {
+  font-size: 1.5em;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-family: RoundControl;
+  color: azure;
+  background: rgb(0, 67, 190);
+  border: 1px solid rgb(0, 67, 190);
+}
+.showProjet .containProjet .listFrameworks #btnThirdLangage {
+  font-size: 1.5em;
+  font-family: RoundControl;
+  color: azure;
+  background: rgb(137, 4, 177);
+  border: 1px solid rgb(137, 4, 177);
+}
+.showProjet .containProjet .listFrameworks #btnGithub {
+  border: none;
+  background: transparent;
+}
+.showProjet .containProjet .listFrameworks #btnGithub .github {
+  cursor: pointer;
+  font-size: 1.5em;
+  color: azure;
+  margin-left: 10px;
+}
+.showProjet .containProjet .listFrameworks #btnGithub:hover {
+  transform: scale(1.4);
 }
 
-@media screen and (max-width: 1440px) {
-  .showProjet {
-    height: 100vh;
-  }
-  .showProjet .containProjet .img-fluid {
-    height: 550px;
-  }
+#present #btnClosePresent {
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: azure;
+  background: transparent;
 }
-@media screen and (max-width: 1037px) {
-  #me .container-fluid .navbar #btnBars {
-    display: block;
+#present #btnClosePresent:hover {
+  transform: scale(1.2);
+}
+#present .modal-dialog .modal-content {
+  color: #4d0755;
+  background-color: black;
+}
+#present .modal-dialog .modal-content .modal-body {
+  text-align: center;
+}
+#present .modal-dialog .modal-content .modal-body .img-fluid {
+  height: 300px;
+  max-width: 300px;
+  border-radius: 50%;
+}
+#present .modal-dialog .modal-content .modal-body .describeMe {
+  margin: 10px auto;
+  display: block;
+  font-size: 1.4em;
+  max-width: 800px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-family: emizen;
+}
+
+@media screen and (max-width: 1220px) {
+  #my-capacity #myListCapacities {
+    display: flex;
+    flex-direction: row;
   }
-  #me .container-fluid .navbar .navbar-nav {
-    display: none;
+  #my-capacity #myListCapacities .frontend {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  #my-capacity #myListCapacities .backend {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -370,10 +450,20 @@ body {
     max-width: 950px;
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 992px) {
   .Capacity .mySuperPower {
     font-size: 2.8em;
     margin-left: 40px;
+  }
+  .aboutMe .row .col-lg-5 {
+    margin: auto;
+    display: block;
+    max-width: 800px;
+  }
+  .aboutMe .row .col-lg-7 {
+    margin-top: 9px;
+    margin-bottom: -12px;
+    text-align: center;
   }
   #myProjets #listProjets {
     margin-top: -2px;
@@ -393,9 +483,33 @@ body {
     font-size: 1.6em;
   }
 }
+@media screen and (max-width: 991px) {
+  #contact .contactModal {
+    width: 60%;
+  }
+  #contact .contactModal .form-area form .form-group .row .col-lg-6 input {
+    max-width: 400px;
+    width: 100%;
+  }
+  #contact .contactModal .form-area form .form-group textarea {
+    width: 86%;
+  }
+}
 @media screen and (max-width: 959px) {
   #me .container-fluid .myProfil .myName {
     width: 55%;
+  }
+}
+@media screen and (max-width: 792px) {
+  #contact .contactModal {
+    width: 60%;
+  }
+  #contact .contactModal .form-area form .form-group .row .col-lg-6 input {
+    max-width: 370px;
+    width: 100%;
+  }
+  #contact .contactModal .form-area form .form-group textarea {
+    width: 86%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -427,6 +541,10 @@ body {
   #myProjets .lienProjets .lien {
     font-size: 1.6em;
   }
+  .Capacity #myListCapacities {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
   #contact .titleContact {
     margin-top: -15px;
   }
@@ -441,8 +559,15 @@ body {
     height: 520px;
     max-width: 710px;
   }
-  .showProjet .containProjet .listHref .point {
-    font-size: 1.2em;
+}
+@media screen and (max-width: 700px) {
+  .Capacity .mySuperPower {
+    font-size: 2.3em;
+    margin-left: -5px;
+  }
+  .Capacity #myListCapacities {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
   }
 }
 @media screen and (max-width: 580px) {
@@ -479,6 +604,17 @@ body {
   #about-me #myStory .col-lg-7 .meIdentify {
     line-height: 35px;
   }
+  .Capacity .mySuperPower {
+    font-size: 1.8em;
+    margin-left: 17px;
+  }
+  .Capacity #myListCapacities {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+  .Capacity #myListCapacities .frontend .framework, .Capacity #myListCapacities .backend .framework {
+    font-size: 1.2em;
+  }
   #myProjets .nameProjet {
     font-size: 2.4em;
   }
@@ -509,19 +645,36 @@ body {
   }
   .showProjet .containProjet .img-fluid {
     height: 520px;
-    max-width: 410px;
+    max-width: 370px;
   }
-  .showProjet .containProjet .listFrameworks #btnFirstLangage, .showProjet .containProjet .listFrameworks #btnSecondLangage, .showProjet .containProjet .listFrameworks #btnThirdLangage {
-    font-size: 1.3em;
-  }
-  .showProjet .containProjet .listHref {
+  .showProjet .containProjet .listFrameworks {
     display: flex;
     flex-direction: column;
+  }
+  .showProjet .containProjet .listFrameworks #btnFirstLangage, .showProjet .containProjet .listFrameworks #btnSecondLangage, .showProjet .containProjet .listFrameworks #btnThirdLangage {
+    margin: 10px auto;
+    display: block;
+    width: 60%;
+  }
+  .showProjet .containProjet .listFrameworks #btnGithub {
+    font-size: 1.5em;
   }
 }
 @media screen and (max-width: 375px) {
   #me .container-fluid .myProfil .myName {
     width: 80%;
+  }
+  .Capacity .mySuperPower {
+    font-size: 1.8em;
+    margin-left: 10px;
+  }
+  .Capacity #myListCapacities {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    margin-right: 30px;
+  }
+  .Capacity #myListCapacities .frontend .framework, .Capacity #myListCapacities .backend .framework {
+    font-size: 1em;
   }
   #myProjets .nameProjet {
     font-size: 2.4em;
@@ -552,13 +705,6 @@ body {
     height: 460px;
     max-width: 350px;
   }
-  .showProjet .containProjet .listFrameworks #btnFirstLangage, .showProjet .containProjet .listFrameworks #btnSecondLangage, .showProjet .containProjet .listFrameworks #btnThirdLangage {
-    font-size: 1.1em;
-  }
-  .showProjet .containProjet .listHref {
-    display: flex;
-    flex-direction: column;
-  }
 }
 @media screen and (max-width: 320px) {
   #me .container-fluid .myProfil .myName {
@@ -578,16 +724,5 @@ body {
   .showProjet .containProjet .img-fluid {
     height: 450px;
     max-width: 280px;
-  }
-  .showProjet .containProjet .listFrameworks {
-    -moz-column-gap: 20px;
-         column-gap: 20px;
-  }
-  .showProjet .containProjet .listFrameworks #btnFirstLangage, .showProjet .containProjet .listFrameworks #btnSecondLangage, .showProjet .containProjet .listFrameworks #btnThirdLangage {
-    font-size: 1em;
-  }
-  .showProjet .containProjet .listHref {
-    display: flex;
-    flex-direction: column;
   }
 }/*# sourceMappingURL=styles.css.map */

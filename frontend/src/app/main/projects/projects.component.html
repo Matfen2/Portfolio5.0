@@ -1,1 +1,13 @@
-<p>projects works!</p>
+<div class="showProjet" *ngIf="projetData">
+  <button type="button" id="btnCloseProjet" [routerLink]="['/present']"><i class="fas fa-times"></i></button>
+  <div class="containProjet">
+    <h2 class="nameProjet">{{ projetData.name }}</h2>
+    <a [href]="projetData.hrefSite" class="site"><img [src]="projetData.mainPict" alt="pictProjet" class="img-fluid w-100" /></a>
+    <div class="listFrameworks">
+      <button type="button" id="btnFirstLangage">{{projetData.langageOne}}</button>
+      <button type="button" id="btnSecondLangage">{{projetData.langageTwo}}</button>
+      <button type="button" id="btnThirdLangage">{{projetData.langageThree}}</button>
+      <button type="button" id="btnGithub"><a [href]="projetData.hrefGithub" class="github"><i class="fa-brands fa-github"></i></a></button>
+    </div>
+  </div>
+</div>
