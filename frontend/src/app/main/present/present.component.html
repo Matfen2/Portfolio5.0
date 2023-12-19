@@ -1,0 +1,141 @@
+<!-- ME -->
+<section id="me">
+    <div class="container-fluid">
+        <div class="navbar navbar-expand-lg">
+            <div class="navbar-brand" [routerLink]="'/show'">MF</div>
+            <button type="button" id="btnBars"><i class="fas fa-bars" data-bs-toggle="offcanvas" data-bs-target="#sideCanvas"></i></button>
+            <div class="navbar-nav">
+                <li class="nav-item"><a href="portfolio.html#about-me" class="nav-link">A propose de moi</a></li>
+                <li class="nav-item"><a href="portfolio.html#my-capacity" class="nav-link">Compétences</a></li>
+                <li class="nav-item"><a href="portfolio.html#myProjets" class="nav-link">Projets</a></li>
+                <li class="nav-item"><a href="portfolio.html#contact" class="nav-link">Contact</a></li>
+            </div>
+        </div>
+        <div class="myProfil">
+            <h1 class="myName">Mathieu FENOUIL</h1>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT ME -->
+<section class="aboutMe" id="about-me">
+    <h1 class="about">A propos de moi</h1>
+    <div class="row" id="myStory">
+        <div class="col-lg-5 col-md-12">
+            <img src="/assets/pict/pictMeOne.jpg" alt="photoMe" class="img-fluid w-100" />
+        </div>
+        <div class="col-lg-7 col-md-12">
+            <div class="meIdentify">
+                <p class="describeMe">
+                    Bonjour je m'appelle Mathieu FENOUIL, je suis un développeur web junior autoditacte. Pendant deux ou trois ans, je travaillais dans le milieu du cinéma (assistant réalisateur, régisseur, ingénieur son, machino, monteur). J'ai acquis de nombreuses compétences tels que l'organisation, l'écoute, le conseil ainsi que des qualités relationnelles importantes. Mais à présent, en parallèle de mon travail, j'ai effectué une reconversion professionnelle dans le développement web, un domaine qui m'intéressait depuis des années.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CAPACITY -->
+<section class="Capacity" id="my-capacity">
+    <h1 class="mySuperPower">Mes compétences/Mon CV</h1>
+    <div id="myListCapacities">
+            <ul class="frontend">
+                <li class="framework">HTML</li>
+                <li class="framework">CSS</li>
+                <li class="framework">SCSS</li>
+                <li class="framework">BOOTSTRAP</li>
+                <li class="framework">JAVASCRIPT</li>
+                <li class="framework">ANGULAR</li>
+            </ul>
+            <ul class="frontend">
+                <li class="framework">NODE JS</li>
+                <li class="framework">MYSQL</li>
+                <li class="framework">PHPADMIN</li>
+                <li class="framework">SECURITY</li>
+                <li class="framework">API/CRUD OPERATIONS</li>
+            </ul>     
+        <div id="myCVMF">
+            <div class="myCV">
+                <button type="button" id="btnDownload"><a href="/assets/pict/CV Mathieu FENOUIL.jpg" class="text-white" style="font-size: 1.4em; text-decoration: none; font-family: linkStart;" download="CV Mathieu FENOUIL.png">Télécharger mon CV <i class="fa-solid fa-download"></i></a></button>
+            </div>
+        </div>
+    </div>
+</section>       
+
+<!-- MES PROJETS -->
+<section class="idea" id="myProjets">
+    <h1 class="nameProjet">MES PROJETS</h1>
+    <div class="row" id="listProjets">
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <div class="lienProjets">
+        <a [routerLink]="'/projets'" class="lien">VOIR MES AUTRES PROJETS</a>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="myContact" id="contact">
+    <h1 class="titleContact">Contact</h1>
+    <div class="contactModal">
+  <div class="form-area">
+  <form [formGroup]="answer" (ngSubmit)="contact()">
+    <div class="alert alert-success" role="alert" *ngIf="successmsg">
+        <p>Message envoyé avec succès</p>
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="errormsg">
+        <p>Message non envoyé</p>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-lg-6">
+          <label></label>
+          <input type="email" class="form-control" name="adress" placeholder="Adresse email" formControlName="adress" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" [ngClass]="{ 'is.invalid': answer.get('adress')?.touched && answer.get('adress')?.invalid }" />
+          <div class="warning" *ngIf="answer.get('adress')?.invalid && (answer.get('adress')?.dirty || answer.get('adress')?.touched)">
+            <div class="alert alert-danger" *ngIf="answer.get('adress')?.hasError('required')">L'adresse email est requise</div>
+            <div class="alert alert-danger" *ngIf="answer.get('adress')?.hasError('adress')">La forme de l'adresse email est incorrecte</div>
+            <div class="alert alert-danger" *ngIf="answer.get('adress')?.hasError('minlength')">L'adresse email doit avoir au moins 10 caractères</div>
+        </div>
+
+        </div>
+        <div class="col-lg-6">
+          <label></label>
+          <input type="text" class="form-control" name="subject" placeholder="Sujet de Conversation" formControlName="subject" />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label></label>
+      <textarea name="message" placeholder="Message" formControlName="message" minlength="400" cols="20" rows="7"></textarea>
+    </div>
+    <button type="submit" id="btnSend">ENVOYER</button>
+  </form>
+</div>
+
+
+    </div>
+</section>
+
+<!-- OFFCANVAS -->
+<section class="offcanvas offcanvas-end" id="sideCanvas">
+    <div class="offcanvas-body">
+        <button type="button" id="btnCloseCanvas" data-bs-dismiss="offcanvas">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="containNav">
+            <div class="navbar-nav">
+                <li class="nav-item">
+                    <a href="portofolio.html#about-me" class="nav-link">A propos de moi</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portofolio.html#my-capacity" class="nav-link">Compétences/CV</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portofolio.html#myProjets" class="nav-link">Projets</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portofolio.html#contact" class="nav-link">Contact</a>
+                </li>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,756 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+    display: block;
+}
+
+// ROOT & MIXIN
+$firstColor: azure;
+$secondColor: black;
+$thirdColor: darkred;
+$fourColor: rgb(165, 8, 165);
+$fiveColor: #171a21;
+$sixColor: rgb(31, 31, 31);
+$sevenColor: rgb(48, 48, 48);
+$eigthColor: #075509;
+
+@mixin flex ($flexDirection) {
+    display: flex;
+    flex-direction: $flexDirection;
+}
+
+// FONTS
+@font-face {
+    font-family: emizen;
+    src: url(./assets/fonts/emizen.otf);
+}
+
+@font-face {
+    font-family: linkStart;
+    src: url(./assets/fonts/linkStart.otf);
+}
+
+@font-face {
+    font-family: RoundControl;
+    src: url(./assets/fonts/roundControl.otf);
+}
+
+@font-face {
+    font-family: olney;
+    src: url(./assets/fonts/olney.otf);
+}
+
+@font-face {
+    font-family: fastHand;
+    src: url(./assets/fonts/fastHand.otf);
+}
+
+// HEAD
+#me {
+    background-image: url('/assets/pict/gamerBackground.jpg');
+    .container-fluid {
+        .navbar {
+            align-items: center;
+            justify-content: space-between;
+            .navbar-brand {
+                width: 60px;
+                height: 60px;
+                padding: 7px;
+                font-size: 2.0em;
+                margin-left: 10px;
+                border-radius: 50%;
+                color: $firstColor;
+                font-family: fastHand;
+                border: 1px solid $secondColor;
+                background-color: $secondColor;
+            }
+            #btnBars {
+                display: none;
+                font-size: 1.6em;
+                border: transparent;
+                background: transparent;
+            }
+            .navbar-nav {
+                .nav-link {
+                    font-size: 1.6em;
+                    font-weight: bold;
+                    margin-left: 20px;
+                    margin-right: 30px;
+                    color: $firstColor;
+                    letter-spacing: 6px;
+                    font-family: linkStart;
+                    &:hover {
+                        color: $thirdColor;
+                    }
+                }
+            }
+        }
+        .myProfil {
+            left: 0%;
+            top: -30%;
+            height: 700px;
+            color: $fourColor;
+            position: relative;
+            text-align: center;
+            transform: translate(0%, 35%);
+            .myName {
+                width: 30%;
+                margin: auto;
+                display: block;
+                font-size: 3.2em;
+                letter-spacing: 6px;
+                border-radius: 40px;
+                font-family: emizen;
+                background-color: $fiveColor;
+                border: 1px solid $secondColor;
+            }
+        }
+    }
+}
+
+// ABOUT ME
+.aboutMe {
+  background-color: $sixColor;
+  .about {
+    padding-top: 12px;
+    color: $firstColor;
+    font-size: 2.1em;
+    text-align: center;
+    font-family: emizen;
+    letter-spacing: 4px;
+  }
+  #myStory {
+    padding: 20px;
+    flex-direction: row;
+    align-items: center;
+    .img-fluid {
+      height: 600px;
+    }
+  }
+  .meIdentify {
+    color: $firstColor;
+    line-height: 65px;
+    .describeMe {
+      font-size: 1.6em;
+      font-family: olney;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+// CAPACITY
+.Capacity {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('/assets/pict/capacityBackground.jpg');
+  .mySuperPower {
+    color: $firstColor;
+    margin: 5px auto;
+    text-align: center;
+    letter-spacing: 4px;
+    font-family: emizen;
+    text-shadow: 0px 1px 5px $secondColor
+  }
+  #myListCapacities {
+    @include flex (column);
+      margin-top: 20px;
+      .frontend {
+        justify-content: center;
+        column-gap: 120px;
+        @include flex (row);
+        .framework {
+            font-size: 1.6em;
+            color: $firstColor;
+            font-family: RoundControl;
+            text-shadow: 0px 1px 5px $secondColor
+        }
+      }
+      .backend {
+        .framework {
+            font-size: 1.6em;
+            color: $firstColor;
+            font-family: olney;
+            text-shadow: 0px 1px 5px $secondColor
+        }
+      }
+    #myCVMF {
+      .myCV {
+        .img-fluid {
+          width: 100%;
+          margin-top: 40px;
+          max-width: 550px;
+          border: 1px solid black;
+        }
+        #btnDownload {
+          padding: 5px;
+          margin: auto;
+          display: block;
+          border-radius: 40px;
+          border: 1px solid azure;
+          background-color: darkgreen;
+        }
+      }
+    }
+  }
+}
+
+// PROJETS
+#myProjets {
+  margin: -16px auto;
+  padding: 10px 0px 30px 0px;
+  background-color: $sevenColor;
+  .nameProjet {
+    color: $firstColor;
+    margin: 5px auto;
+    text-align: center;
+    letter-spacing: 4px;
+    font-family: emizen;
+  }
+  #listProjets {
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 0%;
+    .col-lg-4 {
+      .img-fluid {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        max-width: 520px;
+        object-fit: cover;
+        border-radius: 40px;
+        transition: all 0.25ms ease;
+        border: 1px solid transparent;
+      }
+    }
+  }
+  .lienProjets {
+    text-align: center;
+    .lien {
+      color: $firstColor;
+      font-size: 1.8em;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-decoration: none;
+      font-family: linkStart;
+      &:hover {
+        color: $thirdColor;
+      }
+    }
+  }
+}
+
+// CONTACT
+#contact {
+  margin-top: -20px;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('/assets/pict/contactBackground.jpeg');
+  .titleContact {
+    color: $firstColor;
+    text-align: center;
+    font-family: emizen;
+    letter-spacing: 4px;
+  }
+  .contactModal {
+    padding-right: 18px;
+    padding-bottom: 20px;
+    width: 40%;
+    display: block;
+    margin: 10px auto;
+    border-radius: 40px;
+    background-color: $secondColor;
+    border: 1px solid $secondColor;
+    .form-area {
+      margin-left: 10px;
+      text-align: center;
+      form {
+        .alert {
+            width: 80%;
+            display: block;
+            margin: 5px auto;
+            p {
+                font-family: olney;
+            }
+        }
+        .form-group {
+          .row {
+            .col-lg-6 {
+              input {
+                width: 100%;
+                height: 40px;
+                font-size: 1.1em;
+                max-width: 300px;
+                border: 0px solid $firstColor;
+                margin: 0px auto;
+                border-radius: 5px;
+                font-family: RoundControl;
+              }
+            }
+          }
+          textarea {
+            width: 95%;
+            font-size: 1.4em;
+            border-radius: 5px;
+            margin-top: 25px;
+            font-family: RoundControl;
+            border: 0px solid $firstColor;
+          }
+          .warningTwo {
+                margin-left: 30px;
+                .alert {
+                  width: 95%;
+                  max-width: 800px;
+                }
+              }
+        }
+        #btnSend {
+          color: $firstColor;
+          border: none;
+          display: block;
+          cursor: pointer;
+          margin: 8px auto;
+          font-size: 1.2em;
+          padding: 10px 20px;
+          border-radius: 5px;
+          background-color: $eigthColor;
+          transition: all 0.25ms ease;
+          &:active {
+            transform: translateY(8px);
+            background-color: $thirdColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+// OFFCANVAS
+#sideCanvas {
+    height: 220px;
+    width: 100%;
+    max-width: 280px;
+    background-color: $secondColor;
+    border-radius: 0px 0px 0px 40px;
+    .offcanvas-body {
+        #btnCloseCanvas {
+            position: relative;
+            top: -10px;
+            left: 87%;
+            color: $firstColor;
+            font-size: 1.8em;
+            border: transparent;
+            background: transparent;
+        }
+        .containNav {
+            margin: -15px auto;
+            text-align: center;
+            .navbar-nav {
+                line-height: 25px;
+                .nav-item {
+                    a {
+                        color: $firstColor;
+                        font-size: 1.6em;
+                        font-family: linkStart;
+                        &:hover {
+                            color: $thirdColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MEDIA QUERRY
+@media screen and (max-width: 1440px) {
+.showProjet {
+    height: 100vh;
+    .containProjet {
+      .img-fluid {
+        height: 550px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1037px) {
+  #me {
+    .container-fluid {
+      .navbar {
+        #btnBars {
+          display: block;
+        }
+        .navbar-nav {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #about-me {
+    #myStory {
+      .col-lg-5 {
+        .img-fluid {
+          height: 600px;
+        }
+      }
+      .col-lg-7 {
+        .meIdentify {
+          line-height: 40px;
+        }
+      }
+    }
+  }
+  #myProjets {
+    .nameProjet {
+      font-size: 2.1em;
+    }
+    .lienProjets {
+      .lien {
+        margin-top: 10px;
+        font-size: 1.4em;
+      }
+    }
+  }
+  #contact {
+    .contactModal {
+      padding-bottom: 15px;
+      width: 70%;
+    }
+  }
+  .showProjet {
+    #btnCloseProjet {
+      top: 1%;
+      left: 98%;
+    }
+    height: 100vh;
+    .containProjet {
+      .img-fluid {
+        height: 520px;
+        max-width: 950px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .Capacity {
+    .mySuperPower {
+      font-size: 2.8em;
+      margin-left: 40px;
+    }
+  }
+  #myProjets {
+    #listProjets {
+      margin-top: -2px;
+      .col-lg-4 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        .img-fluid {
+          max-width: 480px;
+        }
+      }
+    }
+    .lienProjets {
+      margin-top: -18px;
+      margin-bottom: 12px;
+      .lien {
+        font-size: 1.6em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 959px) {
+  #me {
+    .container-fluid {
+      .myProfil {
+        .myName {
+          width: 55%;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  #about-me {
+    #myStory {
+      .col-lg-5 {
+        .img-fluid {
+          height: 600px;
+        }
+      }
+      .col-lg-7 {
+        .meIdentify {
+          margin-top: 10px;
+          text-align: center;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+  #myProjets {
+    .nameProjet {
+      font-size: 2.4em;
+    }
+    #listProjets {
+      margin-top: -2px;
+      .col-lg-4 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        .img-fluid {
+          max-width: 480px;
+        }
+      }
+    }
+    .lienProjets {
+      margin-top: -18px;
+      margin-bottom: 12px;
+      .lien {
+        font-size: 1.6em;
+      }
+    }
+  }
+  #contact {
+    .titleContact {
+      margin-top: -15px;
+    }
+  }
+  .showProjet {
+    #btnCloseProjet {
+      top: 1%;
+      left: 98%;
+    }
+    height: 100vh;
+    .containProjet {
+      .img-fluid {
+        height: 520px;
+        max-width: 710px;
+      }
+      .listHref {
+        .point {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  #myProjets {
+    .nameProjet {
+      font-size: 2.4em;
+    }
+    #listProjets {
+      #projet {
+        .img-fluid {
+          max-width: 280px;
+        }
+      }
+    }
+    .lienProjets {
+      margin-top: -18px;
+      margin-bottom: 12px;
+      .lien {
+        font-size: 1.6em;
+      }
+    }
+  }
+  .Capacity {
+    .mySuperPower {
+      font-size: 1.8em;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Capacity {
+    .mySuperPower {
+      font-size: 1.6em;
+      margin-right: 22px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #me {
+    .container-fluid {
+      .myProfil {
+        .myName {
+          width: 70%;
+        }
+      }
+    }
+  }
+  #about-me {
+    #myStory {
+      .col-lg-5 {
+        .img-fluid {
+          height: 600px;
+        }
+      }
+      .col-lg-7 {
+        .meIdentify {
+          line-height: 35px;
+        }
+      }
+    }
+  }
+  #myProjets {
+    .nameProjet {
+      font-size: 2.4em;
+    }
+    #listProjets {
+      #projet {
+        margin: 15px;
+        .img-fluid {
+          max-width: 320px;
+          margin-right: 30px;
+        }
+      }
+    }
+    .lienProjets {
+      margin-top: -18px;
+      margin-bottom: 12px;
+      .lien {
+        font-size: 1.6em;
+      }
+    }
+  }
+  #contact {
+    .contactModal {
+      width: 85%;
+    }
+  }
+  .showProjet {
+    height: 120vh;
+    #btnCloseProjet {
+      top: 1%;
+      left: 96%;
+    }
+    height: 100vh;
+    .containProjet {
+      .img-fluid {
+        height: 520px;
+        max-width: 410px;
+      }
+      .listFrameworks {
+        #btnFirstLangage, #btnSecondLangage, #btnThirdLangage {
+          font-size: 1.3em;
+        }
+      }
+      .listHref {
+        @include flex (column);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #me {
+    .container-fluid {
+      .myProfil {
+        .myName {
+          width: 80%;
+        }
+      }
+    }
+  }
+  #myProjets {
+    .nameProjet {
+      font-size: 2.4em;
+    }
+    #listProjets {
+      #projet {
+        margin: 15px;
+        .img-fluid {
+          max-width: 260px;
+          margin-right: 45px;
+        }
+      }
+    }
+    .lienProjets {
+      margin-top: -18px;
+      margin-bottom: 12px;
+      .lien {
+        font-size: 1.6em;
+      }
+    }
+  }
+  .showProjet {
+    height: 200vh;
+    #btnCloseProjet {
+      top: 1%;
+      left: 96%;
+    }
+    height: 100vh;
+    .containProjet {
+      .img-fluid {
+        height: 460px;
+        max-width: 350px;
+      }
+      .listFrameworks {
+        #btnFirstLangage, #btnSecondLangage, #btnThirdLangage {
+          font-size: 1.1em;
+        }
+      }
+      .listHref {
+        @include flex (column);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #me {
+    .container-fluid {
+      .myProfil {
+        .myName {
+          width: 92%;
+        }
+      }
+    }
+  }
+  #contact {
+    .contactModal {
+      width: 92%;
+    }
+  }
+  .showProjet {
+    height: 200vh;
+    #btnCloseProjet {
+      top: 1%;
+      left: 96%;
+    }
+    height: 100vh;
+    .containProjet {
+      .img-fluid {
+        height: 450px;
+        max-width: 280px;
+      }
+      .listFrameworks {
+        column-gap: 20px;
+        #btnFirstLangage, #btnSecondLangage, #btnThirdLangage {
+          font-size: 1.0em;
+        }
+      }
+      .listHref {
+        @include flex (column);
+      }
+    }
+  }
+}
