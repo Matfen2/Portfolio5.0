@@ -24,12 +24,12 @@ export class ProjectsComponent implements OnInit {
   projetDetails: ProjetDetail[] = [
     {
       id: 1,
-      name: 'HEAL GAMER',
-      mainPict: '/assets/pict/projets/healGamerSite.png',
+      name: "SOUL'S HEROES",
+      mainPict: '/assets/pict/projets/soulsHeroesSite.png',
       langageOne: 'ANGULAR',
       langageTwo: 'TYPESCRIPT',
-      langageThree: 'SCSS',
-      hrefGithub: 'https://github.com/Matfen2/HealGamer',
+      langageThree: 'API/CRUD OPERATIONS',
+      hrefGithub: 'https://github.com/Matfen2/SoulsHeroes',
       hrefSite: 'https://matfen2.github.io/test-second-deploy-github/',
     },
     {
