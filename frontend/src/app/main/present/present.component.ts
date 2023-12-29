@@ -14,15 +14,15 @@ export class PresentComponent implements OnInit {
   projets = [
     {
       id: 1,
-      pict: '/assets/pict/projets/healGamerLogo.png',
+      pict: '/assets/pict/projets/carsEagleLogo.png',
     },
     {
       id: 2,
-      pict: '/assets/pict/projets/backWorldLogo.png',
+      pict: '/assets/pict/projets/soulsHeroesLogo.png',
     },
     {
       id: 3,
-      pict: '/assets/pict/projets/animusLogo.png',
+      pict: '/assets/pict/projets/massEffectLogo.png',
     },
   ];
 
