@@ -31,10 +31,8 @@
         </ul>    
     </div>
     <div id="myCVMF">
-            <div class="myCV">
-                <button type="button" id="btnDownload"><a href="/assets/pict/CV Mathieu FENOUIL.jpg" class="text-white" style="font-size: 1.4em; text-decoration: none; font-family: linkStart;" download="CV Mathieu FENOUIL.png">Télécharger mon CV <i class="fa-solid fa-download"></i></a></button>
-            </div>
-        </div>
+        <button type="button" id="btnDownload" (click)="downloadCV()">Télécharger Mon CV</button>
+    </div>
 </section>       
 
 <!-- MES PROJETS -->
@@ -42,7 +40,7 @@
     <h1 class="nameProjet">MES PROJETS</h1>
     <div class="row" id="listProjets">
         <div class="col-lg-4" [id]="projet.id" *ngFor="let projet of projets">
-            <img [src]="projet.pict" [routerLink]="['/projects', projet.id]" class="img-fluid w-100" alt="Starfield" appJobs />
+            <img [src]="projet.pict" [routerLink]="['/projects', projet.id]" class="img-fluid w-100" alt="pictProject" appCardEffect />
         </div>
     </div>
 </section>
@@ -93,9 +91,11 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
-                <img src="/assets/pict/pictMeOne.jpg" class="img-fluid w-100" />
+                
+            </div>
+            <div class="modal-footer">
                 <p class="describeMe">
-                    
+                    Pendant deux ou trois ans, je travaillais dans le milieu du cinéma (assistant réalisateur, régisseur, ingénieur son, machino, monteur). J'ai acquis de nombreuses compétences tels que l'organisation, l'écoute, le conseil ainsi que des qualités relationnelles importantes. Mais à présent, en parallèle de mon travail, j'ai effectué une reconversion professionnelle dans le développement web, un domaine qui m'intéressait depuis des années.
                 </p>
             </div>
         </div>

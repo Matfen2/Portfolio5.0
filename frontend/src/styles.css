@@ -156,19 +156,23 @@ body {
   font-family: RoundControl;
   text-shadow: 0px 1px 5px black;
 }
-.Capacity #myCVMF .myCV .img-fluid {
-  width: 100%;
-  margin-top: 40px;
-  max-width: 550px;
-  border: 1px solid black;
-}
-.Capacity #myCVMF .myCV #btnDownload {
-  padding: 5px;
-  margin: auto;
+.Capacity #myCVMF #btnDownload {
+  color: azure;
+  border: none;
   display: block;
-  border-radius: 40px;
-  border: 1px solid azure;
-  background-color: darkgreen;
+  cursor: pointer;
+  margin: 8px auto;
+  font-size: 1.4em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  letter-spacing: 3px;
+  font-family: linkStart;
+  background-color: #075509;
+  transition: all 0.25ms ease;
+}
+.Capacity #myCVMF #btnDownload:active {
+  transform: translateY(8px);
+  background-color: darkred;
 }
 
 #myProjets {
@@ -284,9 +288,11 @@ body {
   display: block;
   cursor: pointer;
   margin: 8px auto;
-  font-size: 1.2em;
+  font-size: 1.4em;
   padding: 10px 20px;
   border-radius: 5px;
+  letter-spacing: 3px;
+  font-family: linkStart;
   background-color: #075509;
   transition: all 0.25ms ease;
 }
@@ -387,21 +393,23 @@ body {
   background-color: black;
 }
 #present .modal-dialog .modal-content .modal-body {
-  text-align: center;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/pict/pictMeOne.jpg");
 }
-#present .modal-dialog .modal-content .modal-body .img-fluid {
-  height: 300px;
-  max-width: 300px;
-  border-radius: 50%;
-}
-#present .modal-dialog .modal-content .modal-body .describeMe {
+#present .modal-dialog .modal-content .modal-footer .describeMe {
   margin: 10px auto;
   display: block;
   font-size: 1.4em;
   max-width: 800px;
   font-weight: bold;
   letter-spacing: 3px;
-  font-family: emizen;
+  text-align: center;
+  font-family: linkStart;
+  color: azure;
+  text-shadow: 0px 1px 5px black;
 }
 
 @media screen and (max-width: 1220px) {

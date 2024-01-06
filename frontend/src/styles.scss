@@ -176,23 +176,25 @@ $eigthColor: #075509;
     }
   }
   #myCVMF {
-      .myCV {
-        .img-fluid {
-          width: 100%;
-          margin-top: 40px;
-          max-width: 550px;
-          border: 1px solid black;
-        }
-        #btnDownload {
-          padding: 5px;
-          margin: auto;
+    #btnDownload {
+      color: $firstColor;
+          border: none;
           display: block;
-          border-radius: 40px;
-          border: 1px solid azure;
-          background-color: darkgreen;
-        }
-      }
+          cursor: pointer;
+          margin: 8px auto;
+          font-size: 1.4em;
+          padding: 10px 20px;
+          border-radius: 5px;
+          letter-spacing: 3px;
+          font-family: linkStart;
+          background-color: $eigthColor;
+          transition: all 0.25ms ease;
+          &:active {
+            transform: translateY(8px);
+            background-color: $thirdColor;
+          }
     }
+  }
 }
 
 // PROJETS
@@ -315,9 +317,11 @@ $eigthColor: #075509;
           display: block;
           cursor: pointer;
           margin: 8px auto;
-          font-size: 1.2em;
+          font-size: 1.4em;
           padding: 10px 20px;
           border-radius: 5px;
+          letter-spacing: 3px;
+          font-family: linkStart;
           background-color: $eigthColor;
           transition: all 0.25ms ease;
           &:active {
@@ -425,12 +429,13 @@ $eigthColor: #075509;
       color: #4d0755;
       background-color: $secondColor;
       .modal-body {
-        text-align: center;
-        .img-fluid {
-          height: 300px;
-          max-width: 300px;
-          border-radius: 50%;
-        }
+        height: 450px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('/assets/pict/pictMeOne.jpg');
+      }
+      .modal-footer {
         .describeMe {
           margin: 10px auto;
           display: block;
@@ -438,7 +443,10 @@ $eigthColor: #075509;
           max-width: 800px;
           font-weight: bold;
           letter-spacing: 3px;
-          font-family: emizen;
+          text-align: center;
+          font-family: linkStart;
+          color: $firstColor;
+          text-shadow: 0px 1px 5px $secondColor
         }
       }
     }

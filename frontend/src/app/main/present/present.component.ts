@@ -49,5 +49,14 @@ export class PresentComponent implements OnInit {
     );
   }
 
+  downloadCV(): void {
+    const link = document.createElement('a');
+    link.href = '/assets/pict/CV Mathieu FENOUIL.jpg';
+    link.download = 'CV_Mathieu_FENOUIL.jpg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   ngOnInit(): void {}
 }

@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PresentComponent } from './present/present.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { CardEffectDirective } from '../card-effect.directive';
 import { RouterModule, Routes } from '@angular/router';
 
 const routesPages : Routes = [
@@ -15,7 +16,8 @@ const routesPages : Routes = [
 @NgModule({
   declarations: [
     PresentComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    CardEffectDirective
   ],
   imports: [
     FormsModule,
