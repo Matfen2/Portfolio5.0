@@ -1,48 +1,51 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const mysql = require('mysql');
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const mysql = require("mysql");
+
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(bodyParser.json());
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'Matfen',
-    password: 'Geralt2077!',
-    database: 'portfolio',
+const db = mysql.createPool({
+  connectionLimit: 10, // Limite le nombre de connexions simultanées
+  host: "localhost",
+  user: "Matfen",
+  password: "Geralt2077!",
+  database: "portfolio",
 });
 
-db.connect((error) => {
-    if (!error) {
-        console.log('Connection à la base de données réussie');
-    } else {
-        console.log('Echec de la connexion de la base de données');
-    }
+db.getConnection((error, connection) => {
+  if (error) {
+    console.error("Erreur de connexion à la base de données :", error.message);
+  } else {
+    console.log("Connexion à la base de données réussie");
+    connection.release();
+  }
 });
 
 app.listen(PORT, () => {
-    console.log("Connection au port serveur " + PORT);
+  console.log("Serveur en écoute sur le port " + PORT);
 });
 
 // MESSAGE
-app.post('/contact', (req, res) => {
-    let adress = req.body.adress;
-    let subject = req.body.subject;
-    let message = req.body.message;
-    let qr = `INSERT INTO contact (adress, subject, message) VALUES (?, ?, ?)`;
+app.post("/contact", (req, res) => {
+  const { adress, subject, message } = req.body;
+  const qr = "INSERT INTO contact (adress, subject, message) VALUES (?, ?, ?)";
 
-    db.query(qr, [adress, subject, message], (error, results) => {
-        if (error) {
-            console.log(error);
-            res.status(500).send({ message : "Erreur d'interval serveur" });
-        }
-        if (results.affectedRows > 0) {
-            res.status(200).send({ message : "Message envoyé avec succès" });
-        } else {
-            res.status(500).send({ message: "Erreur de l'envoie du message" });
-        }
-    });
+  db.query(qr, [adress, subject, message], (error, results) => {
+    if (error) {
+      console.error(
+        "Erreur lors de l'exécution de la requête SQL :",
+        error.message
+      );
+      res.status(500).send({ message: "Erreur d'interval serveur" });
+    } else if (results.affectedRows > 0) {
+      res.status(200).send({ message: "Message envoyé avec succès" });
+    } else {
+      res.status(500).send({ message: "Erreur de l'envoi du message" });
+    }
+  });
 });
