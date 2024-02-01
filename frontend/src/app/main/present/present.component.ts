@@ -14,7 +14,7 @@ export class PresentComponent implements OnInit {
   projets = [
     {
       id: 1,
-      pict: '/assets/pict/projets/carsEagleLogo.png',
+      pict: '/assets/pict/projets/tlouLogo.png',
     },
     {
       id: 2,

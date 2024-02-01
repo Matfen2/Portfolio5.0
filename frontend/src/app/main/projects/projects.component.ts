@@ -24,13 +24,13 @@ export class ProjectsComponent implements OnInit {
   projetDetails: ProjetDetail[] = [
     {
       id: 1,
-      name: "CAR'S EAGLE",
-      mainPict: '/assets/pict/projets/carsEagleSite.png',
+      name: 'THE LAST OF US',
+      mainPict: '/assets/pict/projets/tlouSite.png',
       langageOne: 'ANGULAR',
       langageTwo: 'TYPESCRIPT',
-      langageThree: 'MYSQL/PHP',
-      hrefGithub: 'https://github.com/Matfen2/CarsEagle',
-      hrefSite: 'https://cars-eagle.vercel.app/show',
+      langageThree: 'MYSQL/MYPHPADMIN',
+      hrefGithub: 'https://github.com/Matfen2/The-Last-Of-Us',
+      hrefSite: 'https://the-last-of-us-orcin.vercel.app/main',
     },
     {
       id: 2,
